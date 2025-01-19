@@ -22,10 +22,9 @@ export const ReadTokensOfOwner: React.FC<PaginatedProps> = ({ address, collectio
         functionName: 'tokensOfOwner',
         args: [address],
     })
-    console.log("tokensOfOwner", tokensOfOwner?.toString());
-
+    // console.log("tokensOfOwner", tokensOfOwner?.toString());
     const totalPages = Math.ceil(Number(balance) / itemsPerPage);
-    console.log("totalPages", totalPages);
+    // console.log("totalPages", totalPages);
     let mappedArray: string[] | null = null;
 
     try {
@@ -33,16 +32,16 @@ export const ReadTokensOfOwner: React.FC<PaginatedProps> = ({ address, collectio
         if (Array.isArray(bigIntArray)) {
         if (bigIntArray.every((item) => typeof item === "bigint")) {
             mappedArray = (bigIntArray as bigint[]).map((value) => value.toString());
-            console.log("mappedArray", mappedArray); // ['2438', '2547']
+            // console.log("mappedArray", mappedArray); // ['2438', '2547']
         } else if (bigIntArray.every((item) => typeof item === "number")) {
             mappedArray = (bigIntArray as number[]).map((value) => value.toString());
-            console.log("mappedArray", mappedArray); // ['2438', '2547']
+            // console.log("mappedArray", mappedArray); // ['2438', '2547']
         } else {
             throw new Error("The variable is not a valid array.");
         }
         } else if (typeof bigIntArray === "bigint") {
         mappedArray = [bigIntArray.toString()];
-        console.log("mappedArray", mappedArray); // ['2438']
+        // console.log("mappedArray", mappedArray); // ['2438']
         } else {
         // throw new Error("The variable is not an array or a single value.");
         }

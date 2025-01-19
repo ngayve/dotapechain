@@ -24,14 +24,12 @@ export const ReadBalanceOf: React.FC<BalanceProps> = ({ address, collection, onB
       onBalanceChange(balance);
     }
   }, [balance, onBalanceChange]);
-  
-  console.log("balance", balance);
+  // console.log("balance", balance);
   
   if (balance === null|| balance === undefined) {
     // Render a loading state while waiting for the balance
     return (<div>Loading...</div>)
   } else {
-
     return (
         <div>
             <div className="mt-4 text-3xl font-bold">{balance?.toString()}</div>

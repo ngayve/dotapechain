@@ -12,13 +12,13 @@ function ReadTotalSupply( {collection}: CollectionProps ) {
   const { data: totalSupply } = useReadContract({
     ...contractconfig,
     functionName: 'totalSupply',
-  })
-  console.log("totalSupply", totalSupply);
+  }) as { data: number };
+  const supply = Number(totalSupply)-1;
+  // console.log("totalSupply", supply);
 
   return (
     <div>
-      {/* <div className="text-gray-600">Total supply of tokens in the collection</div> */}
-      <div className="mt-4 text-3xl font-bold">{totalSupply?.toString()}</div>
+      <div className="mt-4 text-3xl font-bold">{supply.toString()}</div>
     </div>
   )
 }
@@ -35,12 +35,11 @@ const ReadtokenURI: React.FC<tokenId> = ({ Id, collection }) => {
     functionName: 'tokenURI',
     args: [BigInt(Id)],
   })
-  console.log("tokenURI", data);
+  // console.log("tokenURI", data);
 
   return (
     <div>tokenURI: {data.data?.toString()}</div>
   )
 }
-
 
 export { ReadTotalSupply, ReadtokenURI };

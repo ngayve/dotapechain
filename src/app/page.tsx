@@ -35,7 +35,7 @@ const Logo = () => {
     <div className="px-5">
     <h1 className="text-center">
       <span className="block text-2xl mb-2">Welcome to</span>
-      <span className="block text-4xl font-bold">DOT FARMING CENTER</span>
+      <span className="block text-4xl font-bold">DOT</span>
     </h1>
       <div className="flex justify-center items-center py-2">
       <Image
@@ -52,7 +52,7 @@ const Logo = () => {
 }
 
 export default function Home() {
-  console.log('Home component rendered');
+  // console.log('Home component rendered');
   const { address: connectedAddress } = useAccount();
   const [ add, setAdd ] = useState<`0x${string}` | undefined>(connectedAddress);
   const [isMounted, setIsMounted] = useState(false); 
@@ -100,7 +100,7 @@ export default function Home() {
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32">
             <h2 className="text-lg font-bold mb-2">Total Supply</h2>
-            <ReadTotalSupply collection={DOT} />
+              <ReadTotalSupply collection={DOT} />
           </div>
           {/* Card 2 */}
           <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32">
