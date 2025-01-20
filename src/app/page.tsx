@@ -52,7 +52,6 @@ const Logo = () => {
 }
 
 export default function Home() {
-  // console.log('Home component rendered');
   const { address: connectedAddress } = useAccount();
   const [ add, setAdd ] = useState<`0x${string}` | undefined>(connectedAddress);
   const [isMounted, setIsMounted] = useState(false); 
@@ -104,7 +103,7 @@ export default function Home() {
           </div>
           {/* Card 2 */}
           <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32">
-            <h2 className="text-lg font-bold mb-2">Number of hold NFTs</h2>
+            <h2 className="text-lg font-bold mb-2">Owned NFTs</h2>
             {add && (
                 <ReadBalanceOf address={add} collection={DOT} onBalanceChange={handleBalanceChange}/>
               )}
