@@ -11,7 +11,7 @@ const DOT = "DOT";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center p-4 border-b border-gray-200">
+    <div className="flex justify-between items-center p-4 border-b border-gray-200 text-dark">
       <div className="navbar-start w-auto lg:w-1/2">
         
         <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
@@ -97,19 +97,19 @@ export default function Home() {
         {/* Cards Section */}
         <div className="mt-4 grid grid-cols-2 gap-4 w-full max-w-screen-md mx-auto">
           {/* Card 1 */}
-          <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32">
+          <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32 text-dark">
             <h2 className="text-lg font-bold mb-2">Total Supply</h2>
               <ReadTotalSupply collection={DOT} />
           </div>
           {/* Card 2 */}
-          <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32">
+          <div className="bg-white rounded-lg shadow-md p-4 border-2 border-gray-300 min-h-32 text-dark">
             <h2 className="text-lg font-bold mb-2">Owned NFTs</h2>
             {add && (
                 <ReadBalanceOf address={add} collection={DOT} onBalanceChange={handleBalanceChange}/>
               )}
           </div>
           {/* Card 3 */}
-          <div className="bg-white rounded-lg shadow-md p-4 col-span-2 border-2 border-gray-300 min-h-32">
+          <div className="bg-white rounded-lg shadow-md p-4 col-span-2 border-2 border-gray-300 min-h-32 text-dark">
             <h2 className="text-lg font-bold mb-2">Owned NFT Image</h2>
             {add && (
                 <ReadTokensOfOwner address={add} collection={DOT} balance={balance}/>
